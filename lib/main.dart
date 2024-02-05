@@ -88,16 +88,16 @@ class _NavigationState extends State<NavigationBar> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Главная',
+            icon: Icon(Icons.macro_off),
+            label: 'Предупрежение',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Настройки',
+            icon: Icon(Icons.sailing),
+            label: 'Данные',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Поиск',
+            icon: Icon(Icons.radio),
+            label: 'Музыки',
           ),
         ],
       ),
@@ -125,11 +125,11 @@ class _HomePageState extends State<HomePage> {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text('Выборы 2020'),
+                    title: Text('Завтра концерт'),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('В голосуете за Токаева'),
+                        Text('Вам купить билет?'),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('Это твой рабочий стол'),
+                  content: Text('Это ваши данные'),
                   duration: Duration(seconds: 5),
                 ),
               );
@@ -235,62 +235,59 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Выбери свое хобби:',
+                'В какой стране были вы:',
                 style: TextStyle(fontSize: 18),
               ),
               CheckboxListTile(
-                title: Text('Танцы'),
-                value: hobbies.contains('Танцы'),
-                onChanged: (isChecked) => _updateHobbies('Танцы', isChecked),
+                title: Text('Россия'),
+                value: hobbies.contains('Россия'),
+                onChanged: (isChecked) => _updateHobbies('Россия', isChecked),
               ),
               CheckboxListTile(
-                title: Text('Шахматы'),
-                value: hobbies.contains('Шахматы'),
-                onChanged: (isChecked) => _updateHobbies('Шахматы', isChecked),
+                title: Text('Тайланд'),
+                value: hobbies.contains('Тайланд'),
+                onChanged: (isChecked) => _updateHobbies('Тайланд', isChecked),
               ),
               CheckboxListTile(
-                title: Text('Киберспорт'),
-                value: hobbies.contains('Киберспорт'),
-                onChanged: (isChecked) => _updateHobbies('Киберспорт', isChecked),
+                title: Text('Франция'),
+                value: hobbies.contains('Франция'),
+                onChanged: (isChecked) => _updateHobbies('Франция', isChecked),
               ),
               CheckboxListTile(
-                title: Text('Рисование'),
-                value: hobbies.contains('Рисование'),
+                title: Text('Италия'),
+                value: hobbies.contains('Италия'),
                 onChanged: (isChecked) =>
-                    _updateHobbies('Рисование', isChecked),
+                    _updateHobbies('Италия', isChecked),
               ),
               CheckboxListTile(
-                title: Text('Охота'),
-                value: hobbies.contains('Охота'),
-                onChanged: (isChecked) => _updateHobbies('Охота', isChecked),
+                title: Text('Америка'),
+                value: hobbies.contains('Америка'),
+                onChanged: (isChecked) => _updateHobbies('Америка', isChecked),
               ),
               SizedBox(height: 10),
               Text(
-                'Хобби: ${hobbies.join(", ")}',
+                'Страны где я была: ${hobbies.join(", ")}',
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 10),
               Text(
-                'Выбери свой пол:',
+                'Выбери свой статус:',
                 style: TextStyle(fontSize: 16),
               ),
               RadioListTile<bool>(
-                title: Text('Женский'),
+                title: Text('Замужем\Женат'),
                 value: true,
                 groupValue: isFemale ?? false,
                 onChanged: _updateGender,
               ),
               RadioListTile<bool>(
-                title: Text('Мужской'),
+                title: Text('свобона\свободен'),
                 value: false,
                 groupValue: isFemale ?? false,
                 onChanged: _updateGender,
               ),
               SizedBox(height: 30),
-              Text(
-                'Hello: ${isFemale == true ? "Женский" : "Мужской"}',
-                style: TextStyle(fontSize: 16),
-              ),
+              
             ],
           ),
         ),
@@ -310,20 +307,20 @@ class SearchPage extends StatelessWidget {
               child: ListView(
                 children: [
                   ListTile(
-                    leading: Icon(Icons.album),
-                    title: Text('Галерея'),
+                    leading: Icon(Icons.shop),
+                    title: Text('Онлай магазин'),
                   ),
                   ListTile(
-                    leading: Icon(Icons.phone),
-                    title: Text('Телефон'),
+                    leading: Icon(Icons.store),
+                    title: Text('Плеймаркет'),
                   ),
                   ListTile(
-                    leading: Icon(Icons.contacts),
-                    title: Text('Контакты'),
+                    leading: Icon(Icons.library_add),
+                    title: Text('Заметки'),
                   ),
                   ListTile(
-                    leading: Icon(Icons.settings),
-                    title: Text('Настройки'),
+                    leading: Icon(Icons.play_arrow_outlined),
+                    title: Text('Игры'),
                   ),
                   SizedBox(height: 10),
                   ElevatedButton(
@@ -337,13 +334,13 @@ class SearchPage extends StatelessWidget {
                               children: [
                                 Icon(Icons.album),
                                 SizedBox(width: 8),
-                                Text('Скриптонит'),
+                                Text('френк'),
                               ],
                             ),
                             content: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text('Самый лучший музыкант Скриптонит'),
+                                Text('Самый лучший Игрок'),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceAround,
@@ -352,13 +349,13 @@ class SearchPage extends StatelessWidget {
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Запустить'),
+                                      child: Text('посмотреть'),
                                     ),
                                     ElevatedButton(
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('Остановить'),
+                                      child: Text('закрыть'),
                                     ),
                                   ],
                                 ),
@@ -381,52 +378,52 @@ class SearchPage extends StatelessWidget {
                         TableRow(
                           children: [
                             TableCell(
-                              child: Center(child: Text('Музыка')),
+                              child: Center(child: Text('Игры')),
                             ),
                             TableCell(
-                              child: Center(child: Text('Певец')),
+                              child: Center(child: Text('Игрок')),
                             ),
                             TableCell(
-                              child: Center(child: Text('Год')),
-                            ),
-                          ],
-                        ),
-                        TableRow(
-                          children: [
-                            TableCell(
-                              child: Center(child: Text('Это любовь')),
-                            ),
-                            TableCell(
-                              child: Center(child: Text('Скриптонит')),
-                            ),
-                            TableCell(
-                              child: Center(child: Text('2015')),
+                              child: Center(child: Text('Награды')),
                             ),
                           ],
                         ),
                         TableRow(
                           children: [
                             TableCell(
-                              child: Center(child: Text('О ней')),
+                              child: Center(child: Text('SubwayS')),
                             ),
                             TableCell(
-                              child: Center(child: Text('Farik')),
+                              child: Center(child: Text('Lessy')),
                             ),
                             TableCell(
-                              child: Center(child: Text('2016')),
+                              child: Center(child: Text('27')),
                             ),
                           ],
                         ),
                         TableRow(
                           children: [
                             TableCell(
-                              child: Center(child: Text('Жар-Жар')),
+                              child: Center(child: Text('Royalmatch')),
                             ),
                             TableCell(
-                              child: Center(child: Text('Досмукасан')),
+                              child: Center(child: Text('Nazyken')),
                             ),
                             TableCell(
-                              child: Center(child: Text('1997')),
+                              child: Center(child: Text('33')),
+                            ),
+                          ],
+                        ),
+                        TableRow(
+                          children: [
+                            TableCell(
+                              child: Center(child: Text('Fishes')),
+                            ),
+                            TableCell(
+                              child: Center(child: Text('Nazerke')),
+                            ),
+                            TableCell(
+                              child: Center(child: Text('19')),
                             ),
                           ],
                         ),
@@ -442,3 +439,5 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
+
+
